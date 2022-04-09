@@ -4,7 +4,8 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-<div id="menu"style="background-color:rgb(245, 227, 149);padding:25px;text-align:center; font-family:Calibri; font-size:20px; font-weight:bold">
+
+<div id="menu"style="background-image: url('background.jpg');padding:25px;text-align:center; font-family:Calibri; font-size:20px; font-weight:bold">
 
 <li><a href="#about">About Me</a></li>
 <li><a href="#photos">My Photos</a></li>
@@ -16,7 +17,16 @@
 
 </div>
 <!-- how to make my menue bar fixed?	   -->
-<section id="about" class="section">
+
+
+
+<section id="title" class="title" > 
+  <div class="imgtitle">
+<img src="title-removebg-preview.png"  width="880" height="160"alt="title"  >
+<div class="imgtitle"></div>
+</section
+>
+<section id="about" class="section"style="background-image: url('background.jpg')"> 
 <br/>
 <br/>
 <br/>
@@ -30,39 +40,68 @@
 <br/>
 <br/>
 <br/>
+<img src="about-removebg-preview (1).png" width="880" height="320"alt="about" onclick="myFunction(this);" >
 <br/>
 <br/>
 <br/>
-about me
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
 </section>
 
-<section id="photos" class="section">
+<section id="photos" class="section"style="background-image: url('background.jpg')">
+  <!-- photo gallery -->
+  <div class="row">
+    <div class="column">
+      <img src="saba&tree.JPG" width="100" height="140"alt="Saba and tree" onclick="myFunction(this);" >
+    </div>
+    <div class="column">
+      <img src="everyone&home.JPG" width="160" height="140"alt="Zichron Yaacov Sep 2021" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="everyone&field.JPG" width="210" height="140" alt="Givat-Ada May 2020" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="both.JPG" width="170" height="140" alt="Alon's Bar Mitzva" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="busStation.JPG" width="220" height="140"alt="Cheers to Ido" onclick="myFunction(this);">
+    </div>  
+    <div class="column">
+      <img src="plaingwithSavta.JPG" width="170" height="140" alt="Spending time with Savta" onclick="myFunction(this);">
+    </div>
+    
+  </div>
+  
+  <!-- The expanding image container -->
+  <div class="container">
+    <!-- Close the image -->
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  
+    <!-- Expanded image -->
+    <img id="expandedImg" style="width:100%">
+  
+    <!-- Image text -->
+    <div id="imgtext"></div>
+  </div>
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my photos
 <br/>
 <br/>
 <br/>
 </section>
 
-<section id="playlist" class="section">
+<section id="playlist" class="section"style="background-image: url('background.jpg')">
 <br/>
 <br/>
 <br/>
@@ -85,7 +124,7 @@ my playlist
 <br/>
 </section>
 
-<section id="like" class="section">
+<section id="like" class="section"style="background-image: url('background.jpg')">
 <br/>
 <br/>
 <br/>
@@ -108,7 +147,7 @@ give me a like
 <br/>
 </section>
 
-<section id="qrcoder" class="section">
+<section id="qrcoder" class="section"style="background-image: url('background.jpg')">
 <br/>
 <br/>
 <br/>
@@ -131,7 +170,7 @@ scan my code
 <br/>
 </section>
 
-<section id="spa" class="section">
+<section id="spa" class="section"style="background-image: url('background.jpg')">
 <br/>
 <br/>
 <br/>
@@ -154,7 +193,7 @@ ans
 <br/>
 </section>
 
-<section id="contact" class="section">
+<section id="contact" class="section"style="background-image: url('background.jpg')">
 <br/>
 <br/>
 <br/>
@@ -250,6 +289,22 @@ function addEmoji(code)
   option.innerHTML =  code;
   target.appendChild(option);
 }
+
+
+// script for the gallery
+  function myFunction(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+}
+
 
 </script>
 
